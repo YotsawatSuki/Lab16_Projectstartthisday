@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 using namespace std;
 
-void shuffle(int &,int &,int &,int &);
+void shuffle(int &,int &,int &,int &);	
 
 int main(){
 	int a = 50, b = 100, c = 500, d = 1000;
@@ -16,4 +17,21 @@ int main(){
 	}
 	
 	return 0;
+}
+
+void shuffle(int &a,int &b,int &c,int &d){
+	int x = rand()%3 + 1;
+	if(x==1){
+		int temp = a;
+		a = b;
+		b = temp;
+	}else if(x==2){
+		int temp = a;
+		a = c;
+		c = temp;
+	}else{
+		int temp = a;
+		a = d;
+		d = temp;
+	}
 }
